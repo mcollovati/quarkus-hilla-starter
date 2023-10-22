@@ -1,10 +1,10 @@
 package com.example.endpoints;
 
 import com.vaadin.flow.server.auth.AnonymousAllowed;
-import dev.hilla.Endpoint;
+import dev.hilla.BrowserCallable;
 import dev.hilla.Nonnull;
 
-@Endpoint
+@BrowserCallable
 @AnonymousAllowed
 public class HelloEndpoint {
 
