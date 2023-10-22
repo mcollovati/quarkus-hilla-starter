@@ -16,9 +16,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import static com.codeborne.selenide.CollectionCondition.exactTexts;
 import static com.codeborne.selenide.CollectionCondition.size;
-import static com.codeborne.selenide.CollectionCondition.texts;
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.shadowCss;
 import static com.codeborne.selenide.Selenide.$;
@@ -58,14 +57,14 @@ class SmokeTest {
         button.click();
         ElementsCollection messages = $$(shadowCss("div.message", "main-view"))
                 .shouldHave(size(1))
-                .shouldHave(texts("Hello stranger"));
+                .shouldHave(exactTexts("Hello stranger"));
 
         String name = "John";
         textField.$("input").setValue(name);
         button.click();
 
         messages.shouldHave(size(2))
-                .shouldHave(texts("Hello John", "Hello stranger"));
+                .shouldHave(exactTexts("Hello John", "Hello stranger"));
     }
 
 
