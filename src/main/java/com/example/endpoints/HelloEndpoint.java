@@ -8,6 +8,10 @@ import dev.hilla.Nonnull;
 @AnonymousAllowed
 public class HelloEndpoint {
 
+
+
+
+
     @Nonnull
     public String sayHello(@Nonnull String name) {
         if (name.isEmpty()) {
