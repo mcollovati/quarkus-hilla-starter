@@ -60,7 +60,7 @@ class SmokeTest {
                 .shouldHave(size(1))
                 .shouldHave(texts("Hello stranger"));
 
-        String name = "John";
+        String name = "Johnny";
         textField.$("input").setValue(name);
         button.click();
 
