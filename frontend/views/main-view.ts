@@ -23,7 +23,7 @@ export class MainLayout extends LitElement {
           >Say hello</vaadin-button
         >
       </div>
-      ${this.responses.map((response) => html`<div>${response}</div>`)}
+      ${this.responses.map((response) => html`<div class="message">${response}</div>`)}
     `;
     }
     async sayHello() {
