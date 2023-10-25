@@ -20,7 +20,7 @@
         <skipITs>true</skipITs>
         <maven-surefire-plugin.version>3.2.1</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-        <selenide.version>6.19.1</selenide.version>
+        <selenide.version>7.0.0</selenide.version>
 
     </properties>
     <dependencyManagement>
