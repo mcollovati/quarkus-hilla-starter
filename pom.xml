@@ -15,16 +15,28 @@
         <hilla.version>2.5.6</hilla.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-        <quarkus.platform.version>3.7.1</quarkus.platform.version>
+        <quarkus.platform.version>3.8.0</quarkus.platform.version>
 
         <skipITs>true</skipITs>
         <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
         <selenide.version>7.1.0</selenide.version>
+        <jackson.version>2.16.1</jackson.version>
 
     </properties>
     <dependencyManagement>
         <dependencies>
+            <!--
+            Pin jackson BOM to prevent clashes with version imported by Hilla BOM
+            through spring-boot-dependencies BOM
+            -->
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>dev.hilla</groupId>
                 <artifactId>hilla-bom</artifactId>
