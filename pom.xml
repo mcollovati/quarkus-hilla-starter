@@ -15,7 +15,7 @@
         <hilla.version>24.4.8</hilla.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-        <quarkus.platform.version>3.12.0</quarkus.platform.version>
+        <quarkus.platform.version>3.13.2</quarkus.platform.version>
 
         <skipITs>true</skipITs>
         <maven-surefire-plugin.version>3.3.1</maven-surefire-plugin.version>
