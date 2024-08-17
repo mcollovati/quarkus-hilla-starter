@@ -11,6 +11,18 @@ updates:
       interval: "daily"
   - package-ecosystem: "maven"
     directory: "/"
+    target-branch: "2.5"
+    schedule:
+      interval: "daily"
+    ignore:
+      - dependency-name: "com.github.mcollovati:quarkus-hilla"
+        versions: [ ">= 3.0" ]
+      - dependency-name: "dev.hilla:*"
+        versions: [ ">= 3.0" ]
+      - dependency-name: "io.quarkus*:*"
+        versions: [ ">= 3.9" ]
+  - package-ecosystem: "maven"
+    directory: "/"
     target-branch: "1.0"
     schedule:
       interval: "daily"

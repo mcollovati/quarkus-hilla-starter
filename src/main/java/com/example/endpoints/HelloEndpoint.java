@@ -1,8 +1,8 @@
 package com.example.endpoints;
 
 import com.vaadin.flow.server.auth.AnonymousAllowed;
-import dev.hilla.BrowserCallable;
-import dev.hilla.Nonnull;
+import com.vaadin.hilla.BrowserCallable;
+import com.vaadin.hilla.Nonnull;
 
 @BrowserCallable
 @AnonymousAllowed
