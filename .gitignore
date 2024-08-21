@@ -43,5 +43,5 @@ nb-configuration.xml
 /.quarkus/cli/plugins/
 
 node_modules/
-frontend/generated/
+src/main/frontend/generated/
 vite.generated.ts
