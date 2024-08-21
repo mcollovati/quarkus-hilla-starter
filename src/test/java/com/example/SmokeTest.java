@@ -39,23 +39,23 @@ class SmokeTest {
 
     @Test
     void rootPath_mainViewDisplayed() {
-        openAndWait(() -> $("main-view"));
-        $(shadowCss("vaadin-text-field", "main-view")).shouldBe(visible);
-        $$(shadowCss("vaadin-button", "main-view")).filter(Condition.text("Say Hello"))
+        openAndWait(() -> $("vaadin-app-layout"));
+        $("section.view vaadin-text-field").shouldBe(visible);
+        $$("section.view vaadin-button").filter(Condition.text("Say Hello"))
                 .first().shouldBe(visible);
     }
 
     @Test
     void mainView_sayHelloButtonClicked_notificationShown() {
-        openAndWait(() -> $("main-view"));
+        openAndWait(() -> $("vaadin-app-layout"));
 
-        SelenideElement textField = $(shadowCss("vaadin-text-field", "main-view")).shouldBe(visible);
-        SelenideElement button = $$(shadowCss("vaadin-button", "main-view"))
+        SelenideElement textField = $("section.view vaadin-text-field").shouldBe(visible);
+        SelenideElement button = $$("section.view vaadin-button")
                 .filter(Condition.text("Say Hello"))
                 .first().shouldBe(visible);
 
         button.click();
-        ElementsCollection messages = $$(shadowCss("div.message", "main-view"))
+        ElementsCollection messages = $$("section.view li.message")
                 .shouldHave(size(1))
                 .shouldHave(exactTexts("Hello stranger"));
 

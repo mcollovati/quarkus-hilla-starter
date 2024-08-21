@@ -12,7 +12,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <quarkus-hilla.version>24.4.0</quarkus-hilla.version>
-        <hilla.version>24.4.9</hilla.version>
+        <vaadin.version>24.4.9</vaadin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.version>3.13.2</quarkus.platform.version>
@@ -40,7 +40,7 @@
             <dependency>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-bom</artifactId>
-                <version>${hilla.version}</version>
+                <version>${vaadin.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -76,7 +76,7 @@
         </dependency>
         <dependency>
             <groupId>com.github.mcollovati</groupId>
-            <artifactId>quarkus-hilla</artifactId>
+            <artifactId>quarkus-hilla-react</artifactId>
             <version>${quarkus-hilla.version}</version>
         </dependency>
         <dependency>
@@ -102,7 +102,7 @@
                 <!-- Workaround for hilla:init-app :: hilla-spring-boot-starter -->
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-maven-plugin</artifactId>
-                <version>${hilla.version}</version>
+                <version>${vaadin.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -184,7 +184,7 @@
                     <plugin>
                         <groupId>com.vaadin</groupId>
                         <artifactId>vaadin-maven-plugin</artifactId>
-                        <version>${hilla.version}</version>
+                        <version>${vaadin.version}</version>
                         <executions>
                             <execution>
                                 <goals>
