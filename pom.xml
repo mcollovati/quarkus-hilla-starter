@@ -15,7 +15,7 @@
         <hilla.version>2.5.8</hilla.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-        <quarkus.platform.version>3.8.2</quarkus.platform.version>
+        <quarkus.platform.version>3.8.5</quarkus.platform.version>
 
         <skipITs>true</skipITs>
         <maven-surefire-plugin.version>3.4.0</maven-surefire-plugin.version>
@@ -38,16 +38,16 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>dev.hilla</groupId>
-                <artifactId>hilla-bom</artifactId>
-                <version>${hilla.version}</version>
+                <groupId>${quarkus.platform.group-id}</groupId>
+                <artifactId>${quarkus.platform.artifact-id}</artifactId>
+                <version>${quarkus.platform.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>${quarkus.platform.group-id}</groupId>
-                <artifactId>${quarkus.platform.artifact-id}</artifactId>
-                <version>${quarkus.platform.version}</version>
+                <groupId>dev.hilla</groupId>
+                <artifactId>hilla-bom</artifactId>
+                <version>${hilla.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
