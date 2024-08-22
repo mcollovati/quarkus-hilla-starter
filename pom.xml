@@ -38,16 +38,16 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>dev.hilla</groupId>
-                <artifactId>hilla-bom</artifactId>
-                <version>${hilla.version}</version>
+                <groupId>${quarkus.platform.group-id}</groupId>
+                <artifactId>${quarkus.platform.artifact-id}</artifactId>
+                <version>${quarkus.platform.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>${quarkus.platform.group-id}</groupId>
-                <artifactId>${quarkus.platform.artifact-id}</artifactId>
-                <version>${quarkus.platform.version}</version>
+                <groupId>dev.hilla</groupId>
+                <artifactId>hilla-bom</artifactId>
+                <version>${hilla.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
