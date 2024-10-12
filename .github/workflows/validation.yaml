@@ -111,6 +111,8 @@ jobs:
         if: ${{ !vars.QH_DISABLE_CHROME_INSTALL }}
         with:
           chrome-version: stable
+      - name: Fail here
+        run: exit 1
       - name: End-to-end Test (Native mode)
         run: |
           set -x -e -o pipefail
