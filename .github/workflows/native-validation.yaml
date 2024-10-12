@@ -65,10 +65,6 @@ jobs:
         if: ${{ !vars.QH_DISABLE_CHROME_INSTALL }}
         with:
           chrome-version: stable
-      - name: Build
-        run: |
-          set -x -e -o pipefail          
-          mvn -V -e -B -ntp -DskipTests install
       - name: End-to-end Test (Native mode)
         run: |
           set -x -e -o pipefail
