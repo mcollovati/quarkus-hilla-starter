@@ -6,7 +6,7 @@ on:
   pull_request_target:
     types: [opened, synchronize, reopened, edited]
 concurrency:
-  group: ${{ github.head_ref || github.ref_name }}
+  group: native-${{ github.head_ref || github.ref_name }}
   cancel-in-progress: true
 env:
   JAVA_VERSION: 22
