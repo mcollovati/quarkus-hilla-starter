@@ -177,6 +177,7 @@
             </plugin>
         </plugins>
     </build>
+
     <profiles>
         <profile>
             <!-- Production mode is activated using -Pproduction -->
