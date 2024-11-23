@@ -11,13 +11,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <quarkus-hilla.version>24.5.0</quarkus-hilla.version>
-        <hilla.version>24.5.5</hilla.version>
+        <quarkus-hilla.version>24.5.1</quarkus-hilla.version>
+        <vaadin.version>24.5.5</vaadin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.version>3.17.0</quarkus.platform.version>
 
         <skipITs>true</skipITs>
+        <skipUTs>true</skipUTs>
         <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <selenide.version>7.5.1</selenide.version>
@@ -40,7 +41,7 @@
             <dependency>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-bom</artifactId>
-                <version>${hilla.version}</version>
+                <version>${vaadin.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -102,7 +103,7 @@
                 <!-- Workaround for hilla:init-app :: hilla-spring-boot-starter -->
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-maven-plugin</artifactId>
-                <version>${hilla.version}</version>
+                <version>${vaadin.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -147,6 +148,7 @@
                         <selenide.downloadsFolder>${project.build.directory}/selenide/downloads
                         </selenide.downloadsFolder>
                     </systemPropertyVariables>
+                    <skipTests>${skipUTs}</skipTests>
                 </configuration>
             </plugin>
             <plugin>
@@ -179,12 +181,25 @@
         <profile>
             <!-- Production mode is activated using -Pproduction -->
             <id>production</id>
+            <dependencies>
+                <dependency>
+                    <groupId>com.github.mcollovati</groupId>
+                    <artifactId>quarkus-hilla</artifactId>
+                    <version>${quarkus-hilla.version}</version>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>com.vaadin</groupId>
+                            <artifactId>vaadin-dev</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+            </dependencies>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>com.vaadin</groupId>
                         <artifactId>vaadin-maven-plugin</artifactId>
-                        <version>${hilla.version}</version>
+                        <version>${vaadin.version}</version>
                         <executions>
                             <execution>
                                 <goals>
@@ -205,6 +220,7 @@
             </activation>
             <properties>
                 <skipITs>false</skipITs>
+                <skipUTs>true</skipUTs>
                 <quarkus.package.type>native</quarkus.package.type>
             </properties>
         </profile>

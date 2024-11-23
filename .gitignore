@@ -44,4 +44,5 @@ nb-configuration.xml
 
 node_modules/
 frontend/generated/
+src/main/bundles/
 vite.generated.ts
