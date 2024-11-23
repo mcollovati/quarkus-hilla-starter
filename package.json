@@ -4,7 +4,7 @@
   "type": "module",
   "dependencies": {
     "@polymer/polymer": "3.5.2",
-    "@vaadin/bundles": "24.5.1",
+    "@vaadin/bundles": "24.5.3",
     "@vaadin/common-frontend": "0.0.19",
     "@vaadin/hilla-file-router": "24.5.4",
     "@vaadin/hilla-frontend": "24.5.4",
@@ -64,7 +64,7 @@
   "vaadin": {
     "dependencies": {
       "@polymer/polymer": "3.5.2",
-      "@vaadin/bundles": "24.5.1",
+      "@vaadin/bundles": "24.5.3",
       "@vaadin/common-frontend": "0.0.19",
       "@vaadin/hilla-file-router": "24.5.4",
       "@vaadin/hilla-frontend": "24.5.4",
@@ -121,7 +121,7 @@
       "workbox-core": "7.3.0",
       "workbox-precaching": "7.3.0"
     },
-    "hash": "14bd60cd0898db090ea22b507dff6af714cba88f024713db74139ab743f10040"
+    "hash": "6436141cb85c99b11ed3b9e31f2d20910cfb53a3e1830585cd506abe126f0ef1"
   },
   "overrides": {
     "@vaadin/bundles": "$@vaadin/bundles",
