@@ -88,3 +88,19 @@ jobs:
         with:
           name: tests-output
           path: tests-reports-*.tgz
+  test-results:
+    name: Evaluate Validation Results
+    permissions:
+      issues: read
+      checks: write
+      pull-requests: write
+    if: ${{ always() }}
+    needs: [changes, build-and-test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Failure Status
+        if: ${{ always() && (needs.build-and-test.result == 'failure' || needs.build-and-test.result == 'cancelled' }}
+        run: |
+          echo "🚫 THERE ARE TEST MODULES WITH FAILURES or BEEN CANCELLED" | tee -a $GITHUB_STEP_SUMMARY
+          exit 1
+            
