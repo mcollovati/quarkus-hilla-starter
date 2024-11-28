@@ -99,7 +99,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set Failure Status
-        if: ${{ always() && (needs.build-and-test.result == 'failure' || needs.build-and-test.result == 'cancelled' }}
+        if: ${{ always() && (needs.build-and-test.result == 'failure' || needs.build-and-test.result == 'cancelled') }}
         run: |
           echo "🚫 THERE ARE TEST MODULES WITH FAILURES or BEEN CANCELLED" | tee -a $GITHUB_STEP_SUMMARY
           exit 1
