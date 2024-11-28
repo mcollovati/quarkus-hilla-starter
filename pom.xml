@@ -22,7 +22,7 @@
         <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <selenide.version>7.5.1</selenide.version>
-        <jackson.version>2.18.1</jackson.version>
+        <jackson.version>2.18.2</jackson.version>
 
     </properties>
     <dependencyManagement>
