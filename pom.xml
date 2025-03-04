@@ -15,12 +15,12 @@
         <vaadin.version>24.6.5</vaadin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-        <quarkus.platform.version>3.18.0</quarkus.platform.version>
+        <quarkus.platform.version>3.19.1</quarkus.platform.version>
 
         <skipITs>true</skipITs>
         <skipUTs>false</skipUTs>
         <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
-        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
         <selenide.version>7.7.3</selenide.version>
         <jackson.version>2.18.3</jackson.version>
 
