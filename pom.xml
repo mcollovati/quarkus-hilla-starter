@@ -11,8 +11,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <quarkus-hilla.version>24.6.2</quarkus-hilla.version>
-        <vaadin.version>24.6.7</vaadin.version>
+        <quarkus-hilla.version>24.7.0</quarkus-hilla.version>
+        <vaadin.version>24.7.1</vaadin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.version>3.19.3</quarkus.platform.version>
@@ -111,6 +111,13 @@
                         </goals>
                     </execution>
                 </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.github.mcollovati</groupId>
+                        <artifactId>aot-browser-finder-callable-workaround</artifactId>
+                        <version>${quarkus-hilla.version}</version>
+                    </dependency>
+                </dependencies>                
             </plugin>
             <plugin>
                 <groupId>${quarkus.platform.group-id}</groupId>
