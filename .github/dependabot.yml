@@ -9,8 +9,3 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-  - package-ecosystem: "maven"
-    directory: "/"
-    target-branch: "lit"
-    schedule:
-      interval: "weekly"
