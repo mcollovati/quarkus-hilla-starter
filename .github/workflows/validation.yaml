@@ -9,7 +9,7 @@ concurrency:
   group: ${{ github.head_ref || github.ref_name }}
   cancel-in-progress: true
 env:
-  JAVA_VERSION: 17
+  JAVA_VERSION: 21
 jobs:
   check-permissions:
     name: Check User Permissions
