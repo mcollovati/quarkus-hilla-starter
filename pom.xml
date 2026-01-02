@@ -17,7 +17,7 @@
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.version>3.29.2</quarkus.platform.version>
 
-        <skipITs>true</skipITs>
+        <skipITs>false</skipITs>
         <skipUTs>false</skipUTs>
         <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
@@ -154,12 +154,12 @@
         </plugins>
     </build>
 
-
-
-
     <profiles>
         <profile>
             <id>dev-mode-test</id>
+            <properties>
+                <skipITs>true</skipITs>
+            </properties>
             <dependencies>
                 <dependency>
                     <groupId>com.vaadin</groupId>
