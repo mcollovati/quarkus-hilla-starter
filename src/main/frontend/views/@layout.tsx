@@ -51,7 +51,7 @@ export default function MainLayout() {
 
             <DrawerToggle slot="navbar" aria-label="Menu toggle"></DrawerToggle>
             <h2 slot="navbar" className="text-l m-0">
-                vaadin.documentTitleSignal
+                {vaadin.documentTitleSignal}
             </h2>
 
             <Suspense fallback={<ProgressBar indeterminate className="m-0"/>}>
