@@ -11,8 +11,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <quarkus-hilla.version>24.9.1</quarkus-hilla.version>
-        <vaadin.version>24.9.5</vaadin.version>
+        <quarkus-hilla.version>25.0.0</quarkus-hilla.version>
+        <vaadin.version>25.0.2</vaadin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
         <quarkus.platform.version>3.29.2</quarkus.platform.version>
@@ -22,22 +22,10 @@
         <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
         <selenide.version>7.13.0</selenide.version>
-        <jackson.version>2.20.1</jackson.version>
 
     </properties>
     <dependencyManagement>
         <dependencies>
-            <!--
-            Pin jackson BOM to prevent clashes with version imported by Hilla BOM
-            through spring-boot-dependencies BOM
-            -->
-            <dependency>
-                <groupId>com.fasterxml.jackson</groupId>
-                <artifactId>jackson-bom</artifactId>
-                <version>${jackson.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
             <dependency>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-bom</artifactId>
@@ -75,6 +63,7 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-hibernate-validator</artifactId>
         </dependency>
+        <!-- Workaround for hilla:init-app :: hilla-spring-boot-starter -->
         <dependency>
             <groupId>com.github.mcollovati</groupId>
             <artifactId>quarkus-hilla-react</artifactId>
@@ -99,19 +88,6 @@
     </dependencies>
     <build>
         <plugins>
-            <plugin>
-                <!-- Workaround for hilla:init-app :: hilla-spring-boot-starter -->
-                <groupId>com.vaadin</groupId>
-                <artifactId>vaadin-maven-plugin</artifactId>
-                <version>${vaadin.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>prepare-frontend</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>${quarkus.platform.group-id}</groupId>
                 <artifactId>quarkus-maven-plugin</artifactId>
@@ -179,37 +155,14 @@
     </build>
     <profiles>
         <profile>
-            <!-- Production mode is activated using -Pproduction -->
-            <id>production</id>
+            <id>dev-mode-test</id>
             <dependencies>
                 <dependency>
-                    <groupId>com.github.mcollovati</groupId>
-                    <artifactId>quarkus-hilla-react</artifactId>
-                    <version>${quarkus-hilla.version}</version>
-                    <exclusions>
-                        <exclusion>
-                            <groupId>com.vaadin</groupId>
-                            <artifactId>vaadin-dev</artifactId>
-                        </exclusion>
-                    </exclusions>
+                    <groupId>com.vaadin</groupId>
+                    <artifactId>vaadin-dev</artifactId>
+                    <scope>test</scope>
                 </dependency>
             </dependencies>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.vaadin</groupId>
-                        <artifactId>vaadin-maven-plugin</artifactId>
-                        <version>${vaadin.version}</version>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>build-frontend</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
         </profile>
         <profile>
             <id>native</id>
