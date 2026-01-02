@@ -156,6 +156,18 @@
 
     <profiles>
         <profile>
+            <id>skip-all-tests</id>
+            <activation>
+                <property>
+                    <name>skipTests</name>
+                </property>
+            </activation>
+            <properties>
+                <skipUTs>${skipTests}</skipUTs>
+                <skipITs>${skipTests}</skipITs>
+            </properties>
+        </profile>
+        <profile>
             <id>dev-mode-test</id>
             <properties>
                 <skipITs>true</skipITs>
