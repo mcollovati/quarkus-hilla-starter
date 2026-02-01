@@ -15,7 +15,7 @@
         <vaadin.version>25.0.3</vaadin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-        <quarkus.platform.version>3.29.2</quarkus.platform.version>
+        <quarkus.platform.version>3.31.0</quarkus.platform.version>
 
         <skipITs>false</skipITs>
         <skipUTs>false</skipUTs>
